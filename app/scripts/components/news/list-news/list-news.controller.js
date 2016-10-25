@@ -78,7 +78,7 @@
     }
 
     function formatDates(date) {
-      var newDate = moment('2016-01-29 15:13:20.844').format('MMM DD, YYYY');
+      var newDate = moment(date).format('MMM DD, YYYY');
 
       return newDate;
     }
