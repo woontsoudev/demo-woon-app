@@ -1,0 +1,73 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Simple App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+  <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body ng-app="app">
+
+<!--[if lt IE 9]>
+<script src="bower_components/es5-shim/es5-shim.js"></script>
+<script src="bower_components/json3/lib/json3.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<shell></shell>
+
+<!-- third party dependencies -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/lodash/lodash.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/toastr/toastr.js"></script>
+
+<!-- App modules -->
+<script src="scripts/app.js"></script>
+<script src="scripts/core/core.module.js"></script>
+<script src="scripts/core/config.js"></script>
+<script src="scripts/core/constants.js"></script>
+<script src="scripts/core/api/api.module.js"></script>
+<script src="scripts/core/api/api.service.js"></script>
+<script src="scripts/core/httpinterceptor/httpinterceptor.module.js"></script>
+<script src="scripts/core/httpinterceptor/httpinterceptor.js"></script>
+<script src="scripts/core/routerhelper/routerhelper.module.js"></script>
+<script src="scripts/core/routerhelper/routerhelper.provider.js"></script>
+
+<script src="scripts/components/components.module.js"></script>
+<script src="scripts/components/news/news.module.js"></script>
+
+<script src="scripts/directives/directives.module.js"></script>
+<script src="scripts/directives/image-error.directive.js"></script>
+<script src="scripts/layout/layout.module.js"></script>
+
+<script src="scripts/layout/shell/shell.controller.js"></script>
+<script src="scripts/layout/shell/shell.directive.js"></script>
+<script src="scripts/layout/footer-nav/footer-nav.controller.js"></script>
+<script src="scripts/layout/footer-nav/footer-nav.directive.js"></script>
+<script src="scripts/layout/header-nav/header-nav.controller.js"></script>
+<script src="scripts/layout/header-nav/header-nav.directive.js"></script>
+
+<!-- -->
+<script src="scripts/components/news/add-news/add-news.controller.js"></script>
+<script src="scripts/components/news/list-news/list-news.controller.js"></script>
+</body>
+</html>

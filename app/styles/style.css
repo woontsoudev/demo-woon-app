@@ -1,0 +1,132 @@
+
+/* Pages */
+.list-news-view,
+.add-news-view {
+  min-height: 800px
+}
+
+/* Utils */
+
+.no-visible {
+  visibility: hidden;
+}
+
+.btn-settings {
+  font-size: 22px;
+}
+
+.btn-back {
+  margin-bottom: 20px;
+}
+
+/* main view animation */
+.shuffle-animation {
+  display: block;
+}
+.shuffle-animation.ng-enter,
+.shuffle-animation.ng-leave {
+  position: relative;
+}
+
+.shuffle-animation.ng-enter {
+  transition: ease-out all 0.3s 0.4s;
+  left: 2em;
+  opacity: 0;
+}
+
+.shuffle-animation.ng-enter.ng-enter-active {
+  left: 0;
+  opacity: 1;
+}
+
+.shuffle-animation.ng-leave {
+  transition: 0.3s ease-out all;
+  left: 0;
+  opacity: 1;
+}
+
+.shuffle-animation.ng-leave.ng-leave-active {
+  left: 2em;
+  opacity: 0;
+}
+
+/* ngAnimate for ng-messages*/
+ 
+  .animate-msg span.err-text {
+    padding-top: 10px;
+    padding-left: 1px;
+    display: block;
+  };
+
+.animate-msg.ng-move,
+.animate-msg.ng-enter,
+.animate-msg.ng-leave {
+  transition:all cubic-bezier(0.42,0,0.58,1) 0.5s;
+  backface-visibility: hidden;
+}
+.animate-msg.ng-leave.ng-leave-active,
+.animate-msg.ng-move,
+.animate-msg.ng-enter {
+  opacity:0;
+  max-height:0;
+}
+
+.animate-msg.ng-leave,
+.animate-msg.ng-move.ng-move-active,
+.animate-msg.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:30px;
+}
+
+/*Only for demo Proposes*/
+/*Custom Bootstrap*/
+
+.list-news-view .media {
+  padding: 5px;
+}
+
+/*Responsive Utils*/
+.content-displayed {
+  display: block !important;
+}
+
+.content-hide {
+  display: none !important;
+}
+
+/*Media queries*/
+@media only screen and (max-width : 767px) {
+  /*body {background: red}*/
+  .list-news-view, .add-news-view {
+    min-height: 300px;
+  }
+
+  .sidebar-content, .sidebar-menu {
+    display: none;
+  }
+
+  .sidebar-menu {
+    padding: 0px;
+  }
+
+  .sidebar-menu .panel {
+    border: 0;
+  }
+
+  .sidebar-menu .panel .panel-heading {
+    border: 0;
+    background: none;
+  }
+
+  .sidebar-menu .panel .panel-body {
+    padding: 0;
+  }
+
+  .sidebar-menu .panel .panel-body nav {
+    padding: 0px 10px;
+  }
+
+  .content-displayed.sidebar-content, .content-displayed.sidebar-menu {
+    display: block !important;
+  }
+}

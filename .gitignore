@@ -1,0 +1,14 @@
+################################################
+###############  .gitignore   ##################
+################################################
+
+node_modules
+bower_components
+app/bower_components
+.bower-tmp
+
+*.log
+npm-debug.log
+
+heroku/app
+build

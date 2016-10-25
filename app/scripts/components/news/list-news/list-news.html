@@ -1,0 +1,102 @@
+<div class="container list-news-view">
+  <div class="row">
+    <div class="col-md-4 col-sm-5 sidebar-menu" ng-class="{'content-displayed': vm.activeSidebar === true}">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <strong>News List</strong>
+          <a class="pull-right" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-cog btn-settings"></span></a>
+        </div>
+        <div class="panel-body">
+          <nav>
+            <ul class="pager">
+              <li class="previous" ng-click="vm.prevPage()" ng-class="{'no-visible': vm.firstItem === 0}">
+                <a href="#">
+                  <span aria-hidden="true">&larr;</span> Older
+                </a>
+              </li>
+              <li>
+                <span>{{vm.itemsPerPage}} of {{vm.totalItems}}</span>
+              </li>
+              <li class="next" ng-click="vm.nextPage()" ng-class="{'no-visible': (vm.lastItem + vm.itemsPerPage) === vm.totalItems || vm.lastItem >= vm.totalItems}">
+                <a href="#">
+                  Newer <span aria-hidden="true">&rarr;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="media" ng-repeat="news in vm.displayedItems" ng-class="{'bg-primary': $index == vm.avtiveItem}" ng-click="vm.selectItem(news.inode, $index)">
+          <div class="media-left media-middle animated fadeInLeft">
+              <img class="media-object img-thumbnail" ng-src="http://demo.dotcms.com/contentAsset/image/{{news.imageContentAsset}}/filter/Thumbnail/thumbnail_w/80/thumbnail_h/80/thumbnail_bg/200200200" image-error="http://us.mnrate.com/img/notfound_img.png" alt="...">
+          </div>
+          <div class="media-body animated fadeInDown">
+            <h5 class="media-heading">{{news.title}}</h5>
+            <em>{{vm.formatDates(news.modDate)}}</em>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8 col-sm-7 sidebar-content" ng-class="{'content-displayed': vm.activeSidebar === false}">
+      <div class="btn-back hidden-lg hidden-md hidden-sm">
+        <button type="button" class="btn btn-primary" ng-click="vm.backToMenu()">Back</button>
+      </div>
+      <article class="slideInRight">
+        <header>
+          <div class="hero">
+              <img class="img-responsive" ng-src="http://demo.dotcms.com/contentAsset/image/{{vm.currentItem[0].imageContentAsset || vm.defaultItem.imageContentAsset}}/filter/Thumbnail/thumbnail_w/900/thumbnail_h/450/thumbnail_bg/000000000" image-error="https://placeholdit.imgix.net/~text?txtsize=84&txt=900%C3%97450&w=900&h=450" alt="">
+          </div>
+          <h3>{{vm.currentItem[0].title || vm.defaultItem.title}}</h3>
+        </header>
+        <section ng-bind-html="vm.currentItem[0].story || vm.defaultItem.story">
+        </section>
+      </article>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">News Filter</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">News limit</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="inputEmail3" placeholder="10" ng-model="data.limit">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Display</label>
+            <div class="col-sm-10">
+              <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="asc" ng-model="data.display"> Asc
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="desc" ng-model="data.display"> Desc
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Order By</label>
+            <div class="col-sm-10">
+              <select class="form-control" ng-model="data.orderby">
+                <option value="title">Title</option>
+                <option value="byline">Autor</option>
+                <option value="topic">Topic</option>
+                <option value="sysPublishDate">Publish Date</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="vm.updateNews(data)">Update News</button>
+      </div>
+    </div>
+  </div>
+</div>

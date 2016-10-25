@@ -1,0 +1,17 @@
+{
+  "name": "woon-test",
+  "version": "0.0.1",
+  "description": "Simple app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.12.2"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Woon - Woon kuang Tsou <woontsoudev@gmail.com>",
+  "license": "MIT"
+}
